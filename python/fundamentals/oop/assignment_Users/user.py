@@ -7,46 +7,31 @@ class User:
 
     def make_deposit(self,amount):
         self.user_balance += amount
-        return self.user_balance    
+        return self    
 
     def make_withdrawal(self,amount):
         self.user_balance -= amount
-        return self.user_balance
+        return self
 
     def transfer_money(self,receiver,amount):
         self.user_balance -= amount
         receiver.user_balance += amount
-        return self.user_balance, receiver.user_balance
+        print(f"User {self.user_name} Transfered {amount} to {receiver.user_name}.\n User: {self.user_name} Balance: {self.user_balance} \n User: {receiver.user_name} Balance: {receiver.user_balance}")
+        return self, receiver
     
     def display_user_balance(self):
-        display = print("User:" + self.user_name + " Balance:" + str(self.user_balance))
-        return display
+        print("User:" + self.user_name + " Balance:" + str(self.user_balance))
+        return self
 
 winter = User("Winter")
 summer = User("Summer")
 autumn = User("Autumn")
 spring = User("Spring")
 
-# winter.user_name = "Winter"
+winter.make_deposit(100).make_deposit(100).make_deposit(100).make_withdrawal(100).display_user_balance()
 
-User.make_deposit(winter, 100)
-User.make_deposit(winter, 100)
-User.make_deposit(winter, 100)
-User.make_withdrawal(winter,100)
-User.display_user_balance(winter)
+summer.make_deposit(100).make_deposit(100).make_withdrawal(100).make_withdrawal(100).display_user_balance()
 
-User.make_deposit(summer, 100)
-User.make_deposit(summer, 100)
-User.make_withdrawal(summer,100)
-User.make_withdrawal(summer,100)
-User.display_user_balance(summer)
+autumn.make_deposit(300).make_withdrawal(100).make_withdrawal(100).make_withdrawal(100).display_user_balance()
 
-User.make_deposit(autumn, 300)
-User.make_withdrawal(autumn, 100)
-User.make_withdrawal(autumn, 100)
-User.make_withdrawal(autumn, 100)
-User.display_user_balance(autumn)
-
-User.transfer_money(winter,autumn,50)
-User.display_user_balance(winter)
-User.display_user_balance(autumn)
+winter.transfer_money(autumn,50)
