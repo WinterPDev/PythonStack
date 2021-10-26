@@ -18,6 +18,7 @@ for x in range(0,500000):
     if x % 2 != 0:
         oddsum += x
 print(oddsum)
+
 # -Countdown by Fours - Print positive numbers starting at 2018, counting down by fours.
 for x in range(2018,0,-4):
     if x % 2 == 0:
@@ -49,3 +50,18 @@ x = [1,2]
 
 x.append(7)
 print(x)
+
+# dictionary = [ {
+
+# }]
+
+# dictionary[1][0]
+
+oddsum = 0
+for x in range(0,500000):
+    if x % 2 != 0:
+        oddsum += x
+print(oddsum)
+        
+# check if x is odd number
+# if x is odd then add to new_number

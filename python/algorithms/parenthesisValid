@@ -1,0 +1,150 @@
+
+// Create a function that, given an input string,
+// returns a boolean whether parentheses in that
+// string are valid. Given input "y(3(p)p(3)r)s",
+// return true. Given "n(0(p)3", return false.
+// Given "n)0(t(0)k", return false.
+
+
+// "y(3(p)p(3)r)s" = true
+// "n(0(p)3"       = false
+
+// "n)0(t(0)k"     = false
+
+
+// Check for "(", if found go to end of string, loop <- Inward to find it's pair ")", move to next "(" found on left side, repeat.
+// 
+var positive_test = "y(3(p)p(3)r)s"
+var invalid_test = "n(0(p)3"
+var invalid_test2 = "n)0(t(0)k"
+
+
+
+function parensValid(str){
+    var par_count = 0
+    for(i = 0; i < str.length; i++) {
+        if( par_count < 0) {
+            return false
+        }
+        if(str[i] == "("){
+            par_count += 1 
+            // console.log(par_count)
+        } 
+        if(str[i] == ")") {
+            par_count-=1
+            // console.log(par_count)
+        }
+    }
+    if(par_count != 0) {
+        return false
+    } else {
+        return true
+    }
+    
+}
+
+console.log(parensValid(invalid_test2))
+
+
+
+var positive_test1 = "w(a{t}s[o(n{c}o)m]e)h[e{r}e]!"
+
+function bracesValid(str){
+    var dict = { 
+        "(":")",
+        "{":"}",
+        "[":"]"
+    }
+    var par_count = 0
+    for(i = 0; i < str.length; i++) {
+        if( par_count < 0) {
+            return false
+        }
+        if(dict[str[i]] != null){
+                par_count += 1 
+                // console.log(par_count)
+            } 
+            if(str[i] == dict[str[i]]) {
+                par_count-=1
+                // console.log(par_count)
+            }
+        }
+    }
+    if(par_count != 0) {
+        return falsel
+    } else {
+        return true
+    }
+
+
+// Given a string, returns whether the sequence of
+// various parentheses, braces and brackets within
+// it are valid. For example, given the input string
+// "w(a{t}s[o(n{c}o)m]e)h[e{r}e]!", return
+// true. Given "d(i{a}l[t]o)n{e", return
+// false. Given "a(1)s[O(n]0{t)0}k", return
+// false.
+
+
+
+function bracesValid(str) {
+    for(var i = 0; i < str.length; i++)
+    {
+        if(str[i] == "(")
+        {
+            var check = false
+            for(var x=i; x<str.length;x++)
+            {
+                if(str[x] == ")")
+                {
+                    check = true;
+                    break;
+                }
+                check = false;
+            }
+            if (check == false)
+            {
+                return false
+            }
+        }
+        if(str[i] == "{")
+        {
+            var check = false
+            for(var x=i; x<str.length;x++)
+            {
+                if(str[x] == "}")
+                {
+                    check = true;
+                    break;
+                }
+                check = false;
+            }
+            if (check == false)
+            {
+                return false
+            }
+        }
+        if(str[i] == "[")
+        {
+            var check = false
+            for(var x=i; x<str.length;x++)
+            {
+                if(str[x] == "]")
+                {
+                    check = true;
+                    break;
+                }
+                check = false;
+            }
+            if (check == false)
+            {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+console.log(bracesValid("({]({})]})")) // true
+console.log(bracesValid("d(i{a}l[t]o)n{e!")) // false
+console.log(bracesValid("{{[a]}}(){bcd}{()}")) // true

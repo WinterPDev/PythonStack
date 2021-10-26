@@ -1,14 +1,18 @@
 
 def countdown(input_number):
-    for x in range(input_number, 0,-1):
-        print(x)
+    new_list = []
+    for x in range(input_number, -1,-1):
+        new_list.append(x)
+    return new_list
 
-countdown(4)
+print(countdown(4))
 
-def print_and_return(val1, val2):
-    print(val1)
-    return val2
-print(print_and_return(1,2))
+
+def print_and_return(list):
+    print(list[0])
+    return list[1]
+print(print_and_return([1,2]))
+
 
 def values_greater_than_second(list):
     new_list = []
@@ -21,11 +25,13 @@ def values_greater_than_second(list):
 
 print(values_greater_than_second([5,2,3,2,1,4]))
 
+
 def first_plus_length(list):
     val1 = list[0] + len(list)
     return val1
 
 print(first_plus_length([1,2,3,4,5]))
+
 
 def length_and_value(size,value):
     list = []
