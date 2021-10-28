@@ -1,0 +1,12 @@
+arr = [-996927, -712924, -632247, -368747, -158617, -53838, 41088, 199139, 401964, 453231]
+
+def bubbles(arr):
+    n = len(arr)
+    for i in range(n-1):
+        for j in range(n-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+bubbles(arr)
+
+print("Sorted is:" f"{arr}")
