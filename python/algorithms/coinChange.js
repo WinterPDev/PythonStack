@@ -9,7 +9,7 @@
 // Example: generateCoinChange(4.57) would return 18 quarters, 1 nickel, 2 pennies
 
 function generateCoinChange(input) {
-    var money = Math.round(input*100);
+    var money = Math.floor(input*100);
     var quarter = 25
     var dime = 10
     var nickel = 5
@@ -22,13 +22,13 @@ function generateCoinChange(input) {
     }
 
     console.log(money)
-    coins['quarters'] = Math.round(money/quarter)
+    coins['quarters'] = Math.floor(money/quarter)
     money = money % quarter
     console.log (money)
-    coins['dimes'] = Math.round (money/dime)
+    coins['dimes'] = Math.floor (money/dime)
     money = money % dime
     console.log (money)
-    coins['nickels'] = Math.round (money/nickel)
+    coins['nickels'] = Math.floor (money/nickel)
     money = money % nickel
     console.log (money)
     coins['pennies'] = money;

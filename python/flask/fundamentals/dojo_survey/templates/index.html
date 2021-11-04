@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Pixar Wars</title>
+</head>
+<body>
+    <h1>Favorite Pixar Movie</h1>
+    <!-- action= points to what url to send the information -->
+    <div class="submit_form">
+        <form action="/submit_info" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter Name Here">
+            <p>
+                <label for="location">Dojo Location:</label>
+                <select name="location">
+                    <option hidden selected disabled>Select Location</option>
+                    <option>Chicago, IL</option>
+                    <option>Nashville, TN</option>
+                    <option>San Jose, CA</option>
+                </select>
+            </p>
+            <label for="language">Favorite Language:</label>
+            <select name="language">
+                <option hidden selected disabled>Select Language</option>
+                <option>Python</option>
+                <option>CSS</option>
+                <option>HTML</option>
+            </select>
+            <label for="comment">Comment(Optional):</label>
+            <textarea name="comment" cols="30" rows="10"></textarea>
+            <p></p>
+            <p></p>
+            <input type="submit"value="Submit">
+        </form>
+    </div>
+</body>
+</html>

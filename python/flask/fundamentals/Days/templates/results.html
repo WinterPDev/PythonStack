@@ -8,7 +8,37 @@
 </head>
 <body>
     <h1>The Results!</h1>
-    Name: {{session["name"]}} | Age: {{session["age"]}}  | Movie {{session["movie"]}}  
     <a href="/">Vote Again</a>
+    <a href="/clear">Clear Votes</a>
+    <table width="400" border="1">
+        <tr>
+            <th>Movie</th>
+            <th>Votes</th>
+        </tr>
+        {% for v in session["votes"] %}
+        <tr>
+            <td>{{v}}</td>
+            <td>{{v.movie}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>Total</td>
+            <td>{{session["total_votes"]}}</td>
+        </tr>
+
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Movie</th>
+        </tr>
+        {% for v in voters %}
+        <tr>
+            <td>{{v.name}}</td>
+            <td>{{v.age}}</td>
+            <td>{{v.movie}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
 </body>
 </html>

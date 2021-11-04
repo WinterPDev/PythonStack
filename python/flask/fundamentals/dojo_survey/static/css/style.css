@@ -1,0 +1,75 @@
+
+* {
+    margin: 0 auto;
+    color: #B3B3B3;
+}
+
+body {
+    background-color: #282828;
+}
+
+h1 {
+    color: #B3B3B3;
+    text-align: center;
+}
+
+table, th, tr, td {
+    border: 1px black solid;
+    background-color: #22303C;
+    color: #8899A6;
+    padding: 10px 30px;
+}
+
+td:hover{
+    background-color: teal;
+    color: white
+}
+
+th {
+    background-color: #15202B;
+}
+
+tr {
+    width: 100%;
+}
+
+.container {
+    background-color: #17181a;
+    display: table;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: 2px black solid;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.submit_form {
+    height: 800px;
+    width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    align-content: left;
+    display: flex;
+    border: 2px black solid;
+}
+
+select {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}

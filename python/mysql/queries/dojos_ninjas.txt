@@ -1,0 +1,46 @@
+INSERT INTO dojos(name)
+VALUES
+("North"),
+("South"),
+("East");
+
+DELETE from dojos
+where id > 0 ;
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES
+("Winter","Perrone",20,4),
+("Autumn","Season",30,4),
+("Summer","Soothes",20,4);
+
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES
+("Jane","Perrone",20,5),
+("Paul","Season",30,5),
+("Chris","Soothes",20,5);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES
+("Simon","Perrone",20,6),
+("Lewis","Season",30,6),
+("Tom","Soothes",20,6);
+
+select dojos.name, ninjas.first_name, ninjas.last_name
+FROM dojos
+left join ninjas ON ninjas.dojo_id = dojos.id
+WHERE dojos.id = 4;
+
+select dojos.name, ninjas.first_name, ninjas.last_name
+FROM dojos
+left join ninjas ON ninjas.dojo_id = dojos.id
+WHERE dojos.id = 6;
+
+select dojos.name, ninjas.id, ninjas.first_name, ninjas.last_name
+FROM dojos
+left join ninjas ON ninjas.dojo_id = dojos.id
+order by ninjas.id desc
+limit 1;
+
+
+

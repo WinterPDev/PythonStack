@@ -1,0 +1,13 @@
+
+
+img {
+    width: 100px;
+    height: auto;
+}
+
+.fname {
+    font-weight: bold;
+    font-size: 1em;
+    margin: 10px;
+    text-decoration: underline;
+}
