@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a Meme</title>
+    <title>Users</title>
 </head>
 <body>
-    <h1>Add a Meme</h1>
-    <form action="/insertmeme" method="POST">
-        <input type="text" name="name" placeholder="Name"><br><br>
-        <input type="text" name="meme_url" placeholder="Meme's URL"><br><br>
-        <input type="submit" value="Submit Meme">
-    </form>
+    <h1>Here are our Users!</h1>
+
     <table>
-        {% for m in memes %}
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Created At</th>
+        {% for us in all_users %}
         <tr>
             <td>
-                <h3>{{m.name}}'s Meme</h3>
-                <img src="{{m.meme_url}}" width=400"><br>
-                <a href="/edit/{{m.id}}">Edit</a>
-                <a href="/delete/{{m.id}}">Delete</a>
-                <hr>
+                {{u.first_name}}
             </td>
         </tr>
         {% endfor %}
